@@ -7,7 +7,7 @@
 * 2. cdk synth
 * 3. cdk bootstrap
 * 4. cdk deploy
-
+* you can delete to stack aws wth command: cdk destroy
 # Test for AWS CLI:
 * Before you can begin using install AWS-CLI must be installed.
 * 1. manual test function lambda with command: 
