@@ -1,0 +1,148 @@
+{
+  "version": "21.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "IntegrationTest2Stack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "IntegrationTest2Stack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "IntegrationTest2Stack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://612412965071/us-east-1",
+      "properties": {
+        "templateFile": "IntegrationTest2Stack.template.json",
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::612412965071:role/cdk-hnb659fds-deploy-role-612412965071-us-east-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::612412965071:role/cdk-hnb659fds-cfn-exec-role-612412965071-us-east-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-612412965071-us-east-1/932dfef414dd64a6fda26778ad3d5e549974e916504cf643f6cc89d794f33845.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "IntegrationTest2Stack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::612412965071:role/cdk-hnb659fds-lookup-role-612412965071-us-east-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "IntegrationTest2Stack.assets"
+      ],
+      "metadata": {
+        "/IntegrationTest2Stack/Queue/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Queue4A7E3555"
+          }
+        ],
+        "/IntegrationTest2Stack/SnsTopic/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SnsTopic2C1570A4"
+          }
+        ],
+        "/IntegrationTest2Stack/ProfileDataBucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProfileDataBucket7E7FD186"
+          }
+        ],
+        "/IntegrationTest2Stack/ProfileDataBucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProfileDataBucketPolicy66849207"
+          }
+        ],
+        "/IntegrationTest2Stack/ProfileDataBucket/AutoDeleteObjectsCustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProfileDataBucketAutoDeleteObjectsCustomResourceCF2B9CFB"
+          }
+        ],
+        "/IntegrationTest2Stack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092"
+          }
+        ],
+        "/IntegrationTest2Stack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F"
+          }
+        ],
+        "/IntegrationTest2Stack/integrationTest2/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "integrationTest2ServiceRole25C15FDC"
+          }
+        ],
+        "/IntegrationTest2Stack/integrationTest2/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "integrationTest2ServiceRoleDefaultPolicy96E34CDE"
+          }
+        ],
+        "/IntegrationTest2Stack/integrationTest2/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "integrationTest2DF30EF39"
+          }
+        ],
+        "/IntegrationTest2Stack/integrationTest2/SqsEventSource:IntegrationTest2StackQueueCE48BCE1/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "integrationTest2SqsEventSourceIntegrationTest2StackQueueCE48BCE12E99C0CE"
+          }
+        ],
+        "/IntegrationTest2Stack/snsTopicArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "snsTopicArn"
+          }
+        ],
+        "/IntegrationTest2Stack/queueUrl": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "queueUrl"
+          }
+        ],
+        "/IntegrationTest2Stack/s3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "s3Bucket"
+          }
+        ],
+        "/IntegrationTest2Stack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/IntegrationTest2Stack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/IntegrationTest2Stack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "IntegrationTest2Stack"
+    }
+  }
+}
