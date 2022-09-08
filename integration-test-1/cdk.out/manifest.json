@@ -1,0 +1,130 @@
+{
+  "version": "21.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "IntegrationTest1Stack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "IntegrationTest1Stack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "IntegrationTest1Stack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://612412965071/us-east-1",
+      "properties": {
+        "templateFile": "IntegrationTest1Stack.template.json",
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::612412965071:role/cdk-hnb659fds-deploy-role-612412965071-us-east-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::612412965071:role/cdk-hnb659fds-cfn-exec-role-612412965071-us-east-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-612412965071-us-east-1/ab9035f4b780deef1ce5a49ddcf96b00c53facb47e66a5ebfcf1ea3cfd8c8924.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "IntegrationTest1Stack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::612412965071:role/cdk-hnb659fds-lookup-role-612412965071-us-east-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "IntegrationTest1Stack.assets"
+      ],
+      "metadata": {
+        "/IntegrationTest1Stack/SnsTopic/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SnsTopic2C1570A4"
+          }
+        ],
+        "/IntegrationTest1Stack/FirstQueue/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FirstQueue19075403"
+          }
+        ],
+        "/IntegrationTest1Stack/SecondQueue/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SecondQueueD5D7042B"
+          }
+        ],
+        "/IntegrationTest1Stack/integrationTest1/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "integrationTest1ServiceRoleBA109EA4"
+          }
+        ],
+        "/IntegrationTest1Stack/integrationTest1/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "integrationTest1ServiceRoleDefaultPolicy6C76A511"
+          }
+        ],
+        "/IntegrationTest1Stack/integrationTest1/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "integrationTest1CF6B96E4"
+          }
+        ],
+        "/IntegrationTest1Stack/scheduleRule/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "scheduleRule8FE1E73B"
+          }
+        ],
+        "/IntegrationTest1Stack/scheduleRule/AllowEventRuleIntegrationTest1StackintegrationTest115D53969": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "scheduleRuleAllowEventRuleIntegrationTest1StackintegrationTest115D5396940BA271D"
+          }
+        ],
+        "/IntegrationTest1Stack/snsTopicArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "snsTopicArn"
+          }
+        ],
+        "/IntegrationTest1Stack/queue1Url": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "queue1Url"
+          }
+        ],
+        "/IntegrationTest1Stack/queue2Url": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "queue2Url"
+          }
+        ],
+        "/IntegrationTest1Stack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/IntegrationTest1Stack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/IntegrationTest1Stack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "IntegrationTest1Stack"
+    }
+  }
+}
