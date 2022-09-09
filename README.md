@@ -1,4 +1,3 @@
-# cpn
 # Integration-test-1
 # Pre-requisite
 * 1. AWS CDK Toolkit: can you install with command npm i aws-cdk
