@@ -1,0 +1,144 @@
+{
+	"info": {
+		"_postman_id": "80246993-cee0-4d26-b3c3-c0841667f44b",
+		"name": "CPN",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18015326"
+	},
+	"item": [
+		{
+			"name": "getProfileByUsername",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"name\": \"John\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/customer/getDataByUsername",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"customer",
+						"getDataByUsername"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAddressByUsername",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"name\": \"John\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/customer/getAddressByUsername",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"customer",
+						"getAddressByUsername"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addAddress",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\": \"John\",\r\n\t\"houseNo\": \"11/02\",\r\n\t\"villageNo\": \"-\",\r\n\t\"alley\": \"1\",\r\n\t\"lane\": \"12\",\r\n\t\"road\": \"Ladphrao\",\r\n\t\"district\": \"Chatuchuk\",\r\n\t\"province\": \"Banhgkok\",\r\n\t\"postalCode\": \"10900\",\r\n    \"subDistrict\": \"Chom Phon\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/customer/addAddress",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"customer",
+						"addAddress"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addProfile",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"John\",\r\n    \"email\": \"john@example.com\",\r\n    \"primaryPhone\": \"xxx-xxxxxx\",\r\n    \"birthday\": \"1995-07-19\",\r\n    \"sex\": \"male\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/customer/addProfile",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"customer",
+						"addProfile"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
