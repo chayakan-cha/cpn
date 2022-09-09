@@ -1,0 +1,57 @@
+version: '2'
+volumes:
+    prometheus_data: {}
+services:
+  app:
+    image: 'customer-profile-service-api:latest'
+    build:
+      context: .
+    container_name: api
+    depends_on:
+      - db
+      - cache
+    ports:
+      - 8080:8080
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/CPN
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=12345
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=none    
+    links:
+     - cache
+    
+  db:
+    image: postgres
+    container_name: db
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=12345
+      - POSTGRES_DB=CPN
+#    restart: always
+  cache:
+    image: redis
+    container_name: cache
+    ports:
+      - "6379:6379"
+  migration:
+    image: flyway/flyway:latest
+    depends_on:
+      - db
+    command: -url=jdbc:postgresql://db:5432/CPN -schemas=public -user=postgres -password=12345 -connectRetries=60 migrate
+    volumes:
+      - ${PWD}/src/main/resources/db/migration:/flyway/sql
+  prometheus:
+    image: prom/prometheus
+    volumes:
+      - ./prometheus/:/etc/prometheus/
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--storage.tsdb.retention=31d'
+      - '--web.console.libraries=/usr/share/prometheus/console_libraries'
+      - '--web.console.templates=/usr/share/prometheus/consoles'
+    ports:
+      - 9090:9090
